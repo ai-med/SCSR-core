@@ -15,24 +15,16 @@ We used data from [Alzheimer's Disease Neuroimaging Initiative (ADNI)](https://a
 
 ## Usage
 
-The package uses [PyTorch](https://pytorch.org). To train and test PASTA, execute the `train_mri2pet.py` script. 
-The configuration file of the command arguments is stored in `src/config/pasta_mri2pet.yaml`.
+The package uses [PyTorch](https://pytorch.org). To train and test SCSR, execute the `DAE_mlp_train.py` script. 
 
 
 ## Citation
 
 ```bibtex
-@InProceedings{Li2024pasta,
-    author="Li, Yitong
-    and Yakushev, Igor
-    and Hedderich, Dennis M.
-    and Wachinger, Christian",
-    title="PASTA: Pathology-Aware MRI to PET Cross-Modal Translation with Diffusion Models",
-    booktitle="Medical Image Computing and Computer Assisted Intervention -- MICCAI 2024",
-    year="2024",
-    publisher="Springer Nature Switzerland",
-    address="Cham",
-    pages="529--540",
-    isbn="978-3-031-72104-5"
+@article{wachinger2024stochastic,
+  title={Stochastic Cortical Self-Reconstruction},
+  author={Wachinger, Christian and Hedderich, Dennis and Bongratz, Fabian},
+  journal={arXiv preprint arXiv:2403.06837},
+  year={2024}
 }
 ```
