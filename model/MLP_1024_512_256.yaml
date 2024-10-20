@@ -1,0 +1,21 @@
+layers:
+  - type: Linear
+    in_features: 1024  # This will be dynamically set based on the input data
+    out_features: 512
+  - type: BatchNorm1d
+  - type: SiLU
+  - type: Linear
+    in_features: 512
+    out_features: 256
+  - type: BatchNorm1d
+  - type: SiLU
+  - type: Dropout
+    p: 0.5
+  - type: Linear
+    in_features: 256
+    out_features: 512
+  - type: BatchNorm1d
+  - type: SiLU
+  - type: Linear
+    in_features: 512
+    out_features: 1024  # This should match the `in_features` of the first layer
