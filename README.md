@@ -15,7 +15,7 @@ We used data from [Alzheimer's Disease Neuroimaging Initiative (ADNI)](https://a
 
 ## Usage
 
-The package uses [PyTorch](https://pytorch.org). To train and test SCSR, execute the `DAE_mlp_train.py` script. 
+The package uses [PyTorch](https://pytorch.org). To train SCSR, call `python DAE_mlp_train.py config_files/training_configs/config_99.yaml`. 
 
 
 ## Citation
