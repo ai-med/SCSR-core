@@ -7,9 +7,9 @@ Official implementation of Stochastic Cortical Self-Reconstruction (SCSR).
 
 ## Installation
 
-1. Create environment: `conda env create -n SCSR --file requirements.yml`
-2. Activate environment: `conda activate SCSR`
-3. Check out the repository
+1. Check out repository
+2. Create environment: `conda env create -n SCSR --file requirements.yml`
+3. Activate environment: `conda activate SCSR`
 4. Download model https://drive.google.com/file/d/1qmD5m3wR1F_sqVmBTyZgWWxi_VCpEbKz/view?usp=sharing
 
 
