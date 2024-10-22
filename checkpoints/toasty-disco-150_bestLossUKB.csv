@@ -1,0 +1,2 @@
+network_config_file,cortex_res,use_region,mask_AD_ROI,use_age_sex,learning_rate,weight_decay,epochs,T_max,jitter_sd,num_predictions,corruption_rate_train,corruption_rate_test,batch_size,percentile,harmonization,epoch,test_loss,val_CN_loss,val_AD_loss
+MLP_1024_1024_1024.yaml,10K,False,False,False,0.001,0.005,200,100,0.01,25,0.75,0.8,64,0.75,False,199,0.49344221527244453,0.4258094755086032,0.5523007229754799

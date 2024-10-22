@@ -1,0 +1,16 @@
+network_config_file: MLP_1024_1024_1024.yaml
+cortex_res: 10K
+use_region: false
+mask_AD_ROI: false
+use_age_sex: false
+learning_rate: 0.001
+weight_decay: 0.005
+epochs: 200
+T_max: 100
+jitter_sd: 0.01
+num_predictions: 25
+corruption_rate_train: 0.75
+corruption_rate_test: 0.8
+batch_size: 64
+percentile: 0.75
+harmonization: false
