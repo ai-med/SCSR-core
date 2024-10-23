@@ -21,8 +21,8 @@ We used data from [Alzheimer's Disease Neuroimaging Initiative (ADNI)](https://a
 ## Usage
 
 - The package uses [PyTorch](https://pytorch.org). 
-- To train SCSR, set the path to the input table `table_path` in the training file and call `python DAE_mlp_train.py config_files/training_configs/config_99.yaml`. 
-- For testing, again set the path to the input table `table_path` in the testing file and call `python DAE_mlp_test.py`
+- To train SCSR, set the path to the input table `table_path` in the training file and call `python SCSR_train.py config_files/training_configs/config.yaml`. 
+- For testing, again set the path to the input table `table_path` in the testing file and call `python SCSR_test.py`
 
 
 ## Citation
