@@ -211,6 +211,10 @@ use_AUC_AD_ROI = True
 
 outputPath = 'resultsTest/'
 
+if not os.path.exists(outputPath):
+    os.makedirs(outputPath)
+
+print(f"Saving results to {outputPath}")
 
 conf_name = wandb_name + '_conf.yaml'
 training_config = load_config('checkpoints/' + conf_name)
@@ -229,7 +233,11 @@ if harmonization:
 else:
     table_path = 'XXX.feather'
 
+
 val_matrix = pd.read_feather(table_path)     
+if 'Dataset' not in val_matrix.columns:
+    # Add a column for the dataset name at the beginning
+    val_matrix.insert(0, 'Dataset', 'MyDataset')
 aparc_names = np.load('tables/aparc_labels_10K.npy', allow_pickle=True)
 
 if harmonization:
@@ -265,17 +273,20 @@ else:
 print(aparc_always_masked)
 always_mask_indices = np.array([np.where(unique_regions == region)[0][0] for region in aparc_always_masked if region in unique_regions])
 
-age_val = val_matrix.iloc[:, 1].values.reshape(-1, 1).astype(np.float32)  
-sex_val = val_matrix.iloc[:, 2].values.reshape(-1, 1)  
+# Assumes columns Dataset, DX, AGE, PTGENDER, thickness data
+age_val = val_matrix.loc[:, 'AGE'].values.reshape(-1, 1).astype(np.float32)  
+sex_val = val_matrix.loc[:, 'PTGENDER'].map({'Male': 1, 'Female': 0}).values.reshape(-1, 1)  
 X_val = val_matrix.iloc[:, 4:].values.astype(np.float32)  
 X_val = X_val[:, ~remove_mask]
 print(X_val.shape)
 
-as_scaler_name = scaler_name.replace('UKB_', 'UKB_AS_')
-preprocessor = joblib.load(as_scaler_name)
-as_val_normalized = preprocessor.transform(np.hstack((age_val,sex_val)))
-if training_config['use_age_sex'] == False:
-    as_val_normalized = np.zeros(as_val_normalized.shape)
+if training_config['use_age_sex']:
+    as_scaler_name = scaler_name.replace('UKB_', 'UKB_AS_')
+    preprocessor = joblib.load(as_scaler_name)
+    as_val_normalized = preprocessor.transform(np.hstack((age_val,sex_val)))
+else:
+    preprocessor = joblib.load(scaler_name)
+    as_val_normalized = np.zeros((X_val.shape[0], 2))
 X_val_normalized = scaler.transform(X_val)
 X_val_normalized = np.hstack((as_val_normalized, X_val_normalized))
 X_val_tensor = torch.tensor(X_val_normalized, dtype=torch.float32)

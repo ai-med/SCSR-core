@@ -8,9 +8,9 @@ Official implementation of Stochastic Cortical Self-Reconstruction (SCSR).
 ## Installation
 
 1. Check out repository
-2. Create environment: `conda env create -n SCSR --file requirements.yml`
+2. Create environment: `conda env create --file environment.yml`
 3. Activate environment: `conda activate SCSR`
-4. Download model https://drive.google.com/file/d/1qmD5m3wR1F_sqVmBTyZgWWxi_VCpEbKz/view?usp=sharing
+4. Download model https://drive.google.com/file/d/1qmD5m3wR1F_sqVmBTyZgWWxi_VCpEbKz/view?usp=sharing and copy to directory `checkpoints`
 
 
 
@@ -20,7 +20,8 @@ We used data from [Alzheimer's Disease Neuroimaging Initiative (ADNI)](https://a
 
 ## Usage
 
-- The package uses [PyTorch](https://pytorch.org). 
+- The package uses [PyTorch](https://pytorch.org)
+- As input data, an input table with columns ['DX', 'AGE', 'PTGENDER', per-vertex values] is expected as a .feather file
 - To train SCSR, set the path to the input table `table_path` in the training file and call `python SCSR_train.py config_files/training_configs/config.yaml`. 
 - For testing, again set the path to the input table `table_path` in the testing file and call `python SCSR_test.py`
 

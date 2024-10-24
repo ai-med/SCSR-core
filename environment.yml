@@ -1,4 +1,4 @@
-name: DAE_pytorch2
+name: SCSR
 channels:
   - pytorch
   - nvidia
