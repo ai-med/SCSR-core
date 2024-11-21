@@ -288,7 +288,7 @@ region_indices = region_indices[~remove_mask]
 unique_region_indices = np.unique(region_indices)
 print(f"removed: {remove_mask.sum()}")
 
-# regions that are always masked, ie, never serve as predictors
+# regions that never serve as predictors
 # NOTE: ensure that corruption_rate is high enough to have enough parcels remaining for random selection
 if training_config['mask_AD_ROI'] == True:
     aparc_always_masked = ['entorhinal', 'inferiortemporal', 'middletemporal', 'inferiorparietal', 'fusiform']
