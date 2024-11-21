@@ -209,7 +209,7 @@ best_model = 'bestLossUKB'
 test_on_cth = False
 use_AUC_AD_ROI = True
 
-outputPath = 'resultsTest/'
+outputPath = 'results/'
 
 if not os.path.exists(outputPath):
     os.makedirs(outputPath)
@@ -231,7 +231,7 @@ if harmonization:
     
     print('Harmonized data')   
 else:
-    table_path = 'XXX.feather'
+    table_path = 'data/sample_data.feather'
 
 
 val_matrix = pd.read_feather(table_path)     

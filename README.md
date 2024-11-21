@@ -23,7 +23,7 @@ We used data from [Alzheimer's Disease Neuroimaging Initiative (ADNI)](https://a
 - The package uses [PyTorch](https://pytorch.org)
 - As input data, an input table with columns ['DX', 'AGE', 'PTGENDER', per-vertex values] is expected as a .feather file
 - To train SCSR, set the path to the input table `table_path` in the training file and call `python SCSR_train.py config_files/training_configs/config.yaml`. 
-- For testing, again set the path to the input table `table_path` in the testing file and call `python SCSR_test.py`
+- For sampling, again set the path to the input table `table_path` in `SCSR_sample.py`. We provide a minimal working example by default using `data/sample_data.feather`, which can be run by calling `python SCSR_sample.py`. The resulting cortex maps & Z-scores can be visualized on [FreeSurfer](https://surfer.nmr.mgh.harvard.edu/) surfaces, e.g., using [visgeom](https://github.com/fabibo3/visgeom).
 
 
 ## Citation
