@@ -29,10 +29,12 @@ We used data from [Alzheimer's Disease Neuroimaging Initiative (ADNI)](https://a
 ## Citation
 
 ```bibtex
-@article{wachinger2024stochastic,
-  title={Stochastic Cortical Self-Reconstruction},
-  author={Wachinger, Christian and Hedderich, Dennis and Bongratz, Fabian},
-  journal={arXiv preprint arXiv:2403.06837},
-  year={2024}
+@article{wachinger2025individualized,
+  title={Individualized mapping of aberrant cortical thickness via stochastic cortical self-reconstruction},
+  author={Wachinger, Christian and Hedderich, Dennis M and Thalhammer, Melissa and Bongratz, Fabian},
+  journal={Medical Image Analysis},
+  pages={103788},
+  year={2025},
+  publisher={Elsevier}
 }
 ```
